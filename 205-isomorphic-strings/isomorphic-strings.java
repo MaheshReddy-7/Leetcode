@@ -12,11 +12,9 @@ class Solution {
             }
             else if(temp.containsKey(ch1) && temp.get(ch1)!=ch2){
                 ans = false;
-                break;
             }
             else if(rev.containsKey(ch2) && rev.get(ch2)!=ch1){
                 ans = false;
-                break;
             }
         }
         return ans;
