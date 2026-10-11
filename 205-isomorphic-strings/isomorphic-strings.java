@@ -1,0 +1,23 @@
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        HashMap<Character,Character>temp = new HashMap<>();
+        HashMap<Character,Character>rev = new HashMap<>();
+        Boolean ans = true;
+        for(int i=0;i<s.length();i++){
+            char ch1 = s.charAt(i);
+            char ch2 = t.charAt(i);
+            if(!temp.containsKey(ch1) && !rev.containsKey(ch2)){
+                temp.put(ch1,ch2);
+                rev.put(ch2,ch1);
+            }
+            else if(temp.containsKey(ch1) && temp.get(ch1)!=ch2){
+                ans = false;
+            }
+            else if(rev.containsKey(ch2) && rev.get(ch2)!=ch1){
+                ans = false;
+            }
+        }
+        return ans;
+        
+    }
+}
